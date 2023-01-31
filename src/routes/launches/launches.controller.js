@@ -22,10 +22,9 @@ function httpAddNewLaunch(res, req) {
     });
   }
 
-  launch.lauchDate = new Date(launch.lauchDate);
-
-  if (isNaN(launch.lauchDate)) {
-    return res.res.status(400).json({
+  launch.launchDate = new Date(launch.launchDate);
+  if (isNaN(launch.launchDate)) {
+    return res.status(400).json({
       error: "Invalid launch date",
     });
   }
